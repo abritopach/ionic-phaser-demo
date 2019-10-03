@@ -8,14 +8,13 @@ import { GameService } from '../services/game.service';
 })
 export class HomePage implements OnInit {
 
-  title = 'Angular 8 working with Phaser 3 JS';
-
   public readonly gameConfig = {
-    title: 'Game Title',
+    title: 'Animation Data Example',
     version: '1.0',
     type: Phaser.AUTO,
     width:  window.innerWidth,
-    height: window.innerHeight
+    height: window.innerHeight,
+    backgroundColor: '#7d7d7d'
   };
 
   constructor(public mainScene: GameService) {
