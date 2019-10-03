@@ -9,12 +9,22 @@ import { GameService } from '../services/game.service';
 export class HomePage implements OnInit {
 
   public readonly gameConfig = {
-    title: 'Animation Data Example',
+    title: 'Fit Running Game',
     version: '1.0',
     type: Phaser.AUTO,
-    width:  window.innerWidth,
-    height: window.innerHeight,
-    backgroundColor: '#7d7d7d'
+    width:  800 /*window.innerWidth*/,
+    height: 600 /*window.innerHeight*/,
+    scale: {
+      mode: Phaser.Scale.FIT,
+      autoCenter: Phaser.Scale.CENTER_BOTH,
+    },
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 300 },
+            debug: false
+        }
+    }
   };
 
   constructor(public mainScene: GameService) {
